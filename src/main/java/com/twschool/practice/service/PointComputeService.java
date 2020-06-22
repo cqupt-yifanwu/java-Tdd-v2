@@ -13,6 +13,10 @@ public class PointComputeService {
         gameWinNumber = 0;
     }
 
+    public static void setPoints(int number) {
+        points = number;
+    }
+
     public int addPoint() {
         points += 3;
 
