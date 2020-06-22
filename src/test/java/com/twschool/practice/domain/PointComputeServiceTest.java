@@ -6,10 +6,20 @@ import org.junit.jupiter.api.Test;
 
 public class PointComputeServiceTest {
     @Test
-    void should_return_12_when_win_3_count() {
-        PointComputeService pointCompute = new PointComputeService();
+    void should_return_11_when_given_winCount_3() {
+        PointComputeService pointComputeService = new PointComputeService();
 
-        pointCompute.setGameCount(3);
-        Assert.assertEquals(pointCompute.getPoint(), 12);
+        PointComputeService.addGameWinNumber();
+
+        int winOneTimePoint = pointComputeService.addPoint();
+        Assert.assertEquals(3, winOneTimePoint);
+
+        PointComputeService.addGameWinNumber();
+        int twiceTimePoint = pointComputeService.addPoint();
+        Assert.assertEquals(6, twiceTimePoint);
+
+        PointComputeService.addGameWinNumber();
+        int secondTimePoint = pointComputeService.addPoint();
+        Assert.assertEquals(11, secondTimePoint);
     }
 }
