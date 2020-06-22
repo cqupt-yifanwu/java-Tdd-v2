@@ -26,7 +26,7 @@ public class GuessNumberGame {
         if (CORRECT_RESULT.equals(result)) {
             gameStatus = GameStatus.SUCCEED;
             PointComputeService.addGameWinNumber();
-            pointComputeService.addPoint()
+            pointComputeService.addPoint();
         } else if (leftTryTimes == 0) {
             gameStatus = GameStatus.FAILED;
             PointComputeService.clearGameWinNumber();
